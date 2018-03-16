@@ -1,0 +1,33 @@
+{
+  "name": "web-stream-demos",
+  "version": "1.0.0",
+  "description": "Some demo of Web Stream and Service Worker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nerv-Eva/web-stream-demos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nerv-Eva/web-stream-demos/issues"
+  },
+  "homepage": "https://github.com/Nerv-Eva/web-stream-demos#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.16.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "node-fetch": "^2.1.1",
+    "pug": "^2.0.1",
+    "query-string": "^6.0.0"
+  }
+}

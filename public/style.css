@@ -1,0 +1,9 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+iframe {
+    width: 49%;
+    height: 100%;
+}
