@@ -4,7 +4,8 @@
   "description": "Some demo of Web Stream and Service Worker",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
