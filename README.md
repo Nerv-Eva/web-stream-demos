@@ -16,5 +16,6 @@ Web stream JSON parse (left).
 
 #### Start a server and check the demos
 ```
+npm i
 npm start
 ```
