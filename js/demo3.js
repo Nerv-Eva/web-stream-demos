@@ -1,3 +1,4 @@
+import StreamJSONParser from 'web-stream-json-parser';
 function addNewLine (data) {
     let html = `
 <td>${data.field}</td>
@@ -16,11 +17,11 @@ function addNewLine (data) {
 (async ()=>{
     let startParseData = false;
     let parsingData = false;
-    const parser = new StreamJSONPaser();
+    const parser = new StreamJSONParser();
     const response = await fetch('./sample.json');
     let one = '';
     parser.parse(response.body);
-    parser.on('String', str => {
+    parser.on('string', str => {
         if (str === 'data') {
             startParseData = true;
         }
@@ -28,7 +29,7 @@ function addNewLine (data) {
             one += `"${str}"`
         }
     })
-    parser.on('Number', number => {
+    parser.on('number', number => {
         if (startParseData && parsingData) {
             one += number.toString();
         }
@@ -42,12 +43,12 @@ function addNewLine (data) {
             }
         }
     })
-    parser.on('onStartArray', () => {
+    parser.on('startArray', () => {
         if (startParseData) {
             parsingData = true;
         }
     })
-    parser.on('onEndArray', () => {
+    parser.on('endArray', () => {
         if (startParseData && parsingData) {
             startParseData = false;
             parsingData = false;
@@ -59,20 +60,19 @@ function addNewLine (data) {
             one += '{';
         }
     })
-    parser.on('onEndObject', () => {
+    parser.on('endObject', () => {
         if (startParseData && parsingData) {
             one += '}';
             addNewLine(JSON.parse(one))
-            console.log(JSON.parse(one));
             one = '';
         }
     })
-    parser.on('onColon', () => {
+    parser.on('colon', () => {
         if (startParseData && parsingData) {
             one += ':';
         }
     })
-    parser.on('onComma', () => {
+    parser.on('comma', () => {
         if (startParseData && parsingData && one !== '') {
             one+=','
         }

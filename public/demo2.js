@@ -281,6 +281,6 @@ class WavPlayer {
 
 document.addEventListener('DOMContentLoaded', () => {
     const player = new WavPlayer(document.getElementById('canvas'));
-    document.getElementById('play').addEventListener('click', () => player.play('http://www.corsak.net/wzry.wav'));
+    document.getElementById('play').addEventListener('click', () => player.play('./wzry.wav'));
     document.getElementById('stop').addEventListener('click', () => player.stop());
 });
